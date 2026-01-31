@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:grow_th/core/routes/app_routes.dart';
-import '../../core/theme/app_theme.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfield.dart';
+import '../../widgets/teams_condisiion.dart';
+import '../../core/theme/app_theme.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,12 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 60),
 
-                // Header: Sign In & Welcome Text
+                // Header Section
                 Center(
                   child: Column(
                     children: [
                       const Text(
-                        'Sign in',
+                        'Create account',
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
@@ -38,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Hi welcome back, You’ve been missed!',
+                        'Hi welcome! Let’s get you started.',
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white.withOpacity(0.8),
@@ -49,6 +50,13 @@ class LoginScreen extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 40),
+
+                const CustomTextField(
+                  label: 'Full Name',
+                  hintText: 'Enter your name',
+                ),
+
+                const SizedBox(height: 20),
 
                 // Email Field
                 const CustomTextField(
@@ -67,37 +75,21 @@ class LoginScreen extends StatelessWidget {
 
                 const SizedBox(height: 12),
 
-                // Forgot Password Link
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: GestureDetector(
-                    onTap: () => Get.toNamed(AppRoutes.forgotpassword),
-                    child: const Text(
-                      'Forgot password?',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
+                // Terms and Conditions Widget
+                const CustomTermsWidget(),
 
                 const SizedBox(height: 30),
 
-                // Sign In Button
+                // Sign Up Button
                 CustomButton(
-
-                    text: 'Sign in',
-                    onPressed: () {
-                      // Login logic here
-                    }
+                  text: 'Sign up',
+                  onPressed: () {
+                  },
                 ),
 
                 const SizedBox(height: 30),
 
-                // Divider: "Or Sign in with"
+                // Divider Section
                 Row(
                   children: [
                     const Expanded(child: Divider(color: Colors.white24)),
@@ -115,9 +107,9 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 25),
+                const SizedBox(height: 20),
 
-                // Social Login Buttons
+                // Social Media Buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -127,24 +119,24 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
 
-                // Sign Up Link
+                // Footer: Sign In Link
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Don’t have an account? ',
+                        'Already have an account? ',
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white,
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => Get.toNamed(AppRoutes.register),
+                        onTap: () => Get.toNamed(AppRoutes.login),
                         child: const Text(
-                          "Sign up",
+                          "Sign in",
                           style: TextStyle(
                             fontSize: 14,
                             color: Color(0xff88E696),
@@ -165,7 +157,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  // Social Button UI
+  // Optimized Social Button
   Widget _buildSocialButton(String assetPath) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -175,9 +167,9 @@ class LoginScreen extends StatelessWidget {
         border: Border.all(color: Colors.white10),
       ),
       child: SvgPicture.asset(
-          assetPath,
-          height: 28,
-          width: 28
+        assetPath,
+        height: 28,
+        width: 28,
       ),
     );
   }
