@@ -23,32 +23,39 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryColor,
-      body: Center(
-        child: RichText(
-          text: TextSpan(
-            style: const TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            children: [
-              const TextSpan(text: 'Grow'),
-              WidgetSpan(
-                alignment: PlaceholderAlignment.top,
-                child: Transform.translate(
-                  offset: const Offset(0, -10),
-                  child: const Text(
-                    'th',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: AppTheme.backgroundGradient,
+        ),
+        child: Center(
+          child: RichText(
+            text: TextSpan(
+              style: const TextStyle(
+                fontSize: 60,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: 'Poppins',
+              ),
+              children: [
+                const TextSpan(text: 'Grow'),
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.top,
+                  child: Transform.translate(
+                    offset: const Offset(2, -15),
+                    child: const Text(
+                      'th',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

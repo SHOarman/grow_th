@@ -11,7 +11,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // ইমেজের মতো কোণাকুণি গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড
       decoration: const BoxDecoration(gradient: AppTheme.backgroundGradient),
       child: Scaffold(
         backgroundColor:
