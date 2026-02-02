@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // Responsive Design
-import 'package:device_preview/device_preview.dart'; // Device Preview
-import 'package:flutter/foundation.dart'; // For kReleaseMode
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:grow_th/core/routes/app_pages.dart';
+import 'package:grow_th/core/theme/app_theme.dart';
 
-import 'core/routes/app_pages.dart';
-import 'core/theme/app_theme.dart';
 import 'core/dependency_injection/injection.dart';
 
 void main() {
   DependencyInjection.init();
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode, // Disable in release mode
+      enabled: !kReleaseMode,
       builder: (context) => const MyApp(),
     ),
   );

@@ -6,4 +6,5 @@ abstract class AppRoutes {
   static const forgotpassword='/forgotpassword';
   static const emailverification='/emailverification';
   static const resetpassword="/resetpassword";
+  static const homescreen="/homescreen";
 }

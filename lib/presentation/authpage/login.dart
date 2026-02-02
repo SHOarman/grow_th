@@ -91,7 +91,7 @@ class LoginScreen extends StatelessWidget {
 
                     text: 'Sign in',
                     onPressed: () {
-                      // Login logic here
+                      Get.toNamed(AppRoutes.homescreen);
                     }
                 ),
 
