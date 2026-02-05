@@ -43,7 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             color: Colors.transparent,
           ),
           child: TextField(
-            controller: widget.controller, // Ekhane controller set kora holo
+            controller: widget.controller,
             obscureText: widget.isPassword ? _isObscured : false,
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(

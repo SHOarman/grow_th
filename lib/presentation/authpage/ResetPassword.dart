@@ -12,7 +12,6 @@ class Resetpassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Background gradient পুরো স্ক্রিনে দেখানোর জন্য Container ব্যবহার করা হয়েছে
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -20,7 +19,6 @@ class Resetpassword extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
-            // ScreenUtil ছাড়া ফিক্সড প্যাডিং
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +40,7 @@ class Resetpassword extends StatelessWidget {
                 const CustomTextField(
                   label: "New Password",
                   hintText: "**********",
-                  isPassword: true, // আমাদের বানানো dynamic toggle logic
+                  isPassword: true,
                 ),
 
                 const SizedBox(height: 20),
@@ -60,16 +58,14 @@ class Resetpassword extends StatelessWidget {
                 CustomButton(
                   text: "Confirm",
                   onPressed: () {
-                    // সাকসেস ডায়ালগ দেখানো
                     SuccessDialog.show(
                       context: context,
                       title: "Successful",
                       message: "Congratulations! Your password has been changed. Click continue to login",
                       buttonText: "Continue",
                       onPressed: () {
-                        // ডায়ালগ বন্ধ করে লগইন স্ক্রিনে যাওয়া
-                        Get.back(); // ডায়ালগ বন্ধ করার জন্য
-                        Get.offAllNamed(AppRoutes.login); // সব রুট ক্লিয়ার করে লগইনে যাওয়া
+                        Get.back();
+                        Get.offAllNamed(AppRoutes.login);
                       },
                     );
                   },
